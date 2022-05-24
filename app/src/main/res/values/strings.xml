@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">HydroponicsHY02</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="storyimg">Image List</string>
+    <string name="username_list">User Name list</string>
+    <string name="story_title">Story Title</string>
+    <string name="logo">Logo</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="invalid_password">Minimal 6 Characters</string>
+    <string name="invalid_email">Invalid Email Format</string>
+    <string name="name">Name</string>
+    <string name="logout">Logout</string>
+    <string name="image_back">Image Back</string>
+    <string name="check_input">Check your input</string>
 </resources>
