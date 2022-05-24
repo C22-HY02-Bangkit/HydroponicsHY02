@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyEditText">
+        <attr name="email" format="boolean" />
+        <attr name="password" format="boolean" />
+        <attr name="name" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="MyButton">
+        <attr name="login" format="boolean" />
+        <attr name="register" format="boolean" />
+    </declare-styleable>
+</resources>
