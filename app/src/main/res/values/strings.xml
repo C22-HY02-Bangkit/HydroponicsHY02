@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">HydroponicsHY02</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="empty">Ups</string>
+    <string name="null_response">LoginResponse is null</string>
+    <string name="errortake">Ups, Shomthing wrong</string>
+    <string name="camfail">Ups Sorry camera is bussy</string>
+    <string name="error_no_permission">Permission is Not Granted</string>
+    <string name="maps">Find Maps</string>
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="map">Maps</string>
     <string name="storyimg">Image List</string>
     <string name="username_list">User Name list</string>
-    <string name="story_title">Story Title</string>
     <string name="logo">Logo</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
@@ -12,7 +21,71 @@
     <string name="invalid_password">Minimal 6 Characters</string>
     <string name="invalid_email">Invalid Email Format</string>
     <string name="name">Name</string>
-    <string name="logout">Logout</string>
     <string name="image_back">Image Back</string>
+    <string name="description">Description</string>
+    <string name="add_story">Add Story</string>
+    <string name="detail_story">Detail Story</string>
+    <string name="change_language">Change Language</string>
+    <string name="logout">Logout</string>
+    <string name="cam_ano">Camera Anomali</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="add">add</string>
+
+    <string name="preview_image">Preview Image</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="capture_camera">Capture Camera</string>
+    <string name="rotate_camera">Rotate Camera</string>
+    <string name="capturing">Capturing</string>
+    <string name="input_picture_first">Please input picture first</string>
+    <string name="not_get_permission">Not getting permission</string>
     <string name="check_input">Check your input</string>
+    <string name="empty_text">No Data</string>
+    <string name="story_title">Story Title</string>
+
+    <string name="error_messege_name">Nama harus diisi</string>
+    <string name="error_messege_email">Email harus diisi</string>
+    <string name="fill_all">Isi terlebih dahulu</string>
+    <string name="sign_up">Daftar</string>
+    <string name="didnt_have_account"><u>Tidak punya akun ?</u></string>
+    <string name="fill_email">Masukan email anda</string>
+    <string name="fill_password">Masukan password anda</string>
+    <string name="fill_name">Masukan nama anda</string>
+    <string name="have_account"><u>Sudah punya akun ?</u></string>
+    <string name="img_story">Foto cerita</string>
+    <string name="galeri">Galeri</string>
+    <string name="capture_image">Tangkap gambar</string>
+    <string name="switch_camera">Putar kamera</string>
+    <string name="image_story" translatable="false">Image story</string>
+    <string name="dicoding" translatable="false">Logo dicoding</string>
+    <string name="continu">lanjut</string>
+    <string name="home_description">Unggah aktivitasmu, dan lihat aktivitas sekelilingmu!</string>
+    <string name="main_picture">Gambar utama</string>
+    <string name="created_add">Dibuat tanggal %1$s,</string>
+    <string name="invalid_permission">Tidak mendapatkan akses</string>
+    <string name="no_attach_file">Tidak ada file</string>
+    <string name="information">Informasi</string>
+    <string name="upload_success">Unggah berhasil</string>
+    <string name="upload_failed">Unggah gagal</string>
+    <string name="no_story">Tidak ada cerita</string>
+    <string name="sign_up_success">Daftar berhasil</string>
+    <string name="sign_up_failed">Daftar gagal</string>
+    <string name="sign_in_success">Masuk berhasil</string>
+    <string name="sign_in_failed">Masuk gagal</string>
+    <string name="greeting">Selamat Datang %1$s,</string>
+    <string name="log_out_success">Keluar berhasil</string>
+    <string name="sign_in_activity">Masuk Story App</string>
+    <string name="sign_up_activity">Daftar Story App</string>
+    <string name="detail_activity">Detail User</string>
+    <string name="story_list_activity" translatable="false">User Story App</string>
+    <string name="error_messege_desc">Masukan Deskripsi</string>
+    <string name="no_attach_desc">Tidak ada deskripsi</string>
+    <string name="retry">Coba lagi</string>
+    <string name="something_wrong">Haduh.. sepertinya ada yang salah, cek kembali koneksi</string>
+    <string name="shared_text">Bagikan Lokasi</string>
+    <string name="invalid_desc">Masukan deskripsi</string>
+    <string name="enable_gps_permission">Tolong aktifkan lokasi anda</string>
+    <string name="error_occurred">Terjadi masalah</string>
+    <string name="location">Lokasi</string>
 </resources>

@@ -33,4 +33,11 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
+    <style name="color">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:src">@drawable/ic_settings</item>
+    </style>
 </resources>

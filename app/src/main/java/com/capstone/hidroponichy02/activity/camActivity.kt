@@ -1,11 +1,12 @@
-package com.capstone.hidroponichy02
+package com.capstone.hidroponichy02.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.hidroponichy02.R
 
-class RegisterActivity : AppCompatActivity() {
+class camActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_cam)
     }
 }

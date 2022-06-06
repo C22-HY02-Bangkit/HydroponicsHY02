@@ -1,83 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="32dp"
-    tools:context=".LoginActivity">
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo"
-        android:transitionName="logoLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:padding="40dp"
+    tools:context=".activity.LoginActivity">
 
+        <ImageView
+            android:id="@+id/img_signin"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/login"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.storyapp.sub1.customview.MyEditText
-        android:id="@+id/emailLog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        custom:email="true" />
+        <com.capstone.hidroponichy02.customview.MyEditTextEmail
+            android:id="@+id/edt_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:hint="@string/fill_email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_signin" />
 
-    <com.storyapp.sub1.customview.MyEditText
-        android:id="@+id/passwordLog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailLog"
-        custom:password="true" />
+        <com.capstone.hidroponichy02.customview.MyEditTextPass
+            android:id="@+id/edt_pass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:hint="@string/fill_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/edt_email"
+            app:layout_constraintStart_toStartOf="@+id/edt_email"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-    <Button
-        android:id="@+id/btnLog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/login"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/passwordLog"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLog" />
+        <com.capstone.hidroponichy02.customview.MyButtonLogin
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_pass" />
 
-    <Button
-        android:id="@+id/btnReg"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="@string/register"
-        android:textColor="@color/green"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnLog"
-        app:layout_constraintTop_toBottomOf="@+id/btnLog" />
+        <TextView
+            android:id="@+id/txt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/didnt_have_account"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
 
     <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
