@@ -8,7 +8,6 @@ import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -22,8 +21,6 @@ import com.capstone.hidroponichy02.model.UserModel
 import com.capstone.hidroponichy02.model.UserPreference
 import com.capstone.hidroponichy02.viewmodel.MainViewModel
 import com.capstone.hidroponichy02.viewmodel.ViewModelUserFactory
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -40,11 +37,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.btnContinue.setOnClickListener {
-//            val moveToListStoryActivity = Intent(this@MainActivity, StoryListActivity::class.java)
-//            moveToListStoryActivity.putExtra(StoryListActivity.EXTRA_USER, user)
-//            startActivity(moveToListStoryActivity)
-//        }
+       binding.btnContinue.setOnClickListener {
+           startActivity(Intent(this@MainActivity, MlActivity::class.java))
+            finish()
+        }
         binding.btnLogOut.setOnClickListener {
             mainViewModel.logout()
             AlertDialog.Builder(this).apply {
@@ -92,6 +88,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.option_menu, menu)
         menu.findItem(R.id.add).isVisible = false
+        menu.findItem(R.id.maps).isVisible = false
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -103,4 +100,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    }
+}

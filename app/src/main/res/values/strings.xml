@@ -1,51 +1,10 @@
 <resources>
     <string name="app_name">HydroponicsHY02</string>
-    <string name="empty">Ups</string>
-    <string name="null_response">LoginResponse is null</string>
-    <string name="errortake">Ups, Shomthing wrong</string>
-    <string name="camfail">Ups Sorry camera is bussy</string>
-    <string name="error_no_permission">Permission is Not Granted</string>
-    <string name="maps">Find Maps</string>
-    <string name="normal_type">Normal</string>
-    <string name="satellite_type">Satellite</string>
-    <string name="terrain_type">Terrain</string>
-    <string name="hybrid_type">Hybrid</string>
-    <string name="map">Maps</string>
-    <string name="storyimg">Image List</string>
-    <string name="username_list">User Name list</string>
-    <string name="logo">Logo</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="invalid_password">Minimal 6 Characters</string>
-    <string name="invalid_email">Invalid Email Format</string>
-    <string name="name">Name</string>
-    <string name="image_back">Image Back</string>
-    <string name="description">Description</string>
-    <string name="add_story">Add Story</string>
-    <string name="detail_story">Detail Story</string>
-    <string name="change_language">Change Language</string>
-    <string name="logout">Logout</string>
-    <string name="cam_ano">Camera Anomali</string>
-    <string name="dashboard">Dashboard</string>
-    <string name="add">add</string>
-
-    <string name="preview_image">Preview Image</string>
-    <string name="camera">Camera</string>
-    <string name="gallery">Gallery</string>
-    <string name="upload">Upload</string>
-    <string name="capture_camera">Capture Camera</string>
-    <string name="rotate_camera">Rotate Camera</string>
-    <string name="capturing">Capturing</string>
-    <string name="input_picture_first">Please input picture first</string>
-    <string name="not_get_permission">Not getting permission</string>
-    <string name="check_input">Check your input</string>
-    <string name="empty_text">No Data</string>
-    <string name="story_title">Story Title</string>
-
     <string name="error_messege_name">Nama harus diisi</string>
     <string name="error_messege_email">Email harus diisi</string>
+    <string name="invalid_email">Isikan dengan email</string>
+    <string name="invalid_password">Password harus lebih dari 5 karakter</string>
+    <string name="login">Masuk</string>
     <string name="fill_all">Isi terlebih dahulu</string>
     <string name="sign_up">Daftar</string>
     <string name="didnt_have_account"><u>Tidak punya akun ?</u></string>
@@ -55,10 +14,16 @@
     <string name="have_account"><u>Sudah punya akun ?</u></string>
     <string name="img_story">Foto cerita</string>
     <string name="galeri">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="description">Deskripsi</string>
+    <string name="upload">Unggah</string>
     <string name="capture_image">Tangkap gambar</string>
     <string name="switch_camera">Putar kamera</string>
+    <string name="name">Nama</string>
     <string name="image_story" translatable="false">Image story</string>
     <string name="dicoding" translatable="false">Logo dicoding</string>
+    <string name="change_language">Ubah bahasa</string>
+    <string name="logout">Keluar</string>
     <string name="continu">lanjut</string>
     <string name="home_description">Unggah aktivitasmu, dan lihat aktivitas sekelilingmu!</string>
     <string name="main_picture">Gambar utama</string>
