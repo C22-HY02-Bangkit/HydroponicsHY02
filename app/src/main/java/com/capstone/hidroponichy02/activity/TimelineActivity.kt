@@ -14,7 +14,7 @@ class TimelineActivity : AppCompatActivity() {
             binding = ActivityTimelineBinding.inflate(layoutInflater)
             setContentView(binding.root)
             val navView: BottomNavigationView = binding.bottom
-            navView.setSelectedItemId(R.id.add)
+            navView.setSelectedItemId(R.id.timeline)
             navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.cam -> {

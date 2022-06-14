@@ -6,5 +6,9 @@
     <color name="green_200">#81b64b</color>
     <color name="green_500">#527A29</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="white_2">#9BA88F</color>
+    <color name="orange">#E45528</color>
+    <color name="brown">#985D41</color>
+
 </resources>
