@@ -59,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
         })
 
         binding.back.setOnClickListener {
-            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+            navigateUpTo(Intent(this@RegisterActivity, LoginActivity::class.java))
             finish()
         }
     }

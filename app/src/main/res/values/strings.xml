@@ -53,4 +53,14 @@
     <string name="enable_gps_permission">Tolong aktifkan lokasi anda</string>
     <string name="error_occurred">Terjadi masalah</string>
     <string name="location">Lokasi</string>
+    <string name="ml_Bacterial">Bakteri</string>
+    <string name="ml_Downy">Jamur/Downy mildew pada selada</string>
+    <string name="ml_Septoria">Jamur/Septoria Blight pada selada</string>
+    <string name="ml_Wilt">Jamur/Layu dan hawar daun pada selada</string>
+    <string name="ml_powdery">Jamur/powdery mildew pada selada</string>
+    <string name="ml_Viral">Virus</string>
+    <string name="ml_healthy">Sehat</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="cam_anomali">Cam Anomali</string>
+    <string name="timeline">Timeline</string>
 </resources>

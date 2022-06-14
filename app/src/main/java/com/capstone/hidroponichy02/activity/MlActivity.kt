@@ -13,8 +13,10 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.capstone.hidroponichy02.R
 import com.capstone.hidroponichy02.databinding.ActivityMlBinding
 import com.capstone.hidroponichy02.ml.Model
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.tensorflow.lite.DataType
 import java.io.IOException
 import java.nio.ByteBuffer
@@ -62,6 +64,25 @@ class MlActivity : AppCompatActivity() {
             )
         }
         binding.take.setOnClickListener { startTakePhoto() }
+        val navView: BottomNavigationView = binding.bottom
+        navView.setSelectedItemId(R.id.cam)
+        navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.cam ->
+                    return@OnNavigationItemSelectedListener true
+                R.id.dashboard -> {
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.timeline -> {
+                    startActivity(Intent(applicationContext, TimelineActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        })
 
     }
     private fun startTakePhoto() {
@@ -108,13 +129,13 @@ class MlActivity : AppCompatActivity() {
                     maxPos = i
                 }
             }
-            val classes = arrayOf("Bacterial",
-                "Fungal/Downy mildew on lettuce",
-                "Fungal/Septoria Blight on lettuce",
-                "Fungal/Wilt and leaf blight on lettuce",
-                "Fungal/powdery mildew on lettuce",
-                "Viral",
-                "healthy")
+            val classes = arrayOf(getString(R.string.ml_Bacterial),
+                getString(R.string.ml_Downy),
+                getString(R.string.ml_Septoria),
+                getString(R.string.ml_Wilt),
+                getString(R.string.ml_powdery),
+                getString(R.string.ml_Viral),
+                getString(R.string.ml_healthy))
             binding.result.text = classes[maxPos]
             var s = ""
             for (i in classes.indices) {

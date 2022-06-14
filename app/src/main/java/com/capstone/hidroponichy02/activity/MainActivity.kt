@@ -21,6 +21,7 @@ import com.capstone.hidroponichy02.model.UserModel
 import com.capstone.hidroponichy02.model.UserPreference
 import com.capstone.hidroponichy02.viewmodel.MainViewModel
 import com.capstone.hidroponichy02.viewmodel.ViewModelUserFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -36,53 +37,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-       binding.btnContinue.setOnClickListener {
-           startActivity(Intent(this@MainActivity, MlActivity::class.java))
-            finish()
-        }
-        binding.btnLogOut.setOnClickListener {
-            mainViewModel.logout()
-            AlertDialog.Builder(this).apply {
-                setTitle(getString(R.string.information))
-                setMessage(getString(R.string.log_out_success))
-                setPositiveButton(getString(R.string.continu)) { _, _ ->
-                    startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-                    finish()
+        val navView: BottomNavigationView = binding.bottom
+        navView.setSelectedItemId(R.id.dashboard)
+        navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.cam -> {
+                    startActivity(Intent(applicationContext, MlActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
                 }
-                create()
-                show()
-            }
-        }
-
-        setViewModel()
-        playImgAnimation()
-    }
-
-    private fun setViewModel() {
-        mainViewModel = ViewModelProvider(
-            this,
-            ViewModelUserFactory(UserPreference.getInstance(dataStore))
-        )[MainViewModel::class.java]
-
-        lifecycleScope.launchWhenCreated {
-            launch {
-                mainViewModel.getUser().collect {
-                    user = it
-                    binding.txtName.text = getString(R.string.greeting, user.email)
+                R.id.dashboard -> return@OnNavigationItemSelectedListener true
+                R.id.timeline -> {
+                    startActivity(Intent(applicationContext, TimelineActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    return@OnNavigationItemSelectedListener true
                 }
             }
-        }
-
-    }
-
-    private fun playImgAnimation() {
-        ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_Y, 12f, -24f).apply {
-            duration = 5000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }.start()
-
+            false
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -51,4 +51,14 @@
     <string name="error_occurred">There is problem</string>
     <string name="location">Location</string>
     <string name="something_wrong">Opps.. somethings is wrong, please check your connection</string>
+    <string name="ml_Bacterial">Bacterial</string>
+    <string name="ml_Downy">Fungal/Downy mildew on lettuce</string>
+    <string name="ml_Septoria">Fungal/Septoria Blight on lettuce</string>
+    <string name="ml_Wilt">Fungal/Wilt and leaf blight on lettuce</string>
+    <string name="ml_powdery">Fungal/powdery mildew on lettuce</string>
+    <string name="ml_Viral">Viral</string>
+    <string name="ml_healthy">Healthy</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="cam_anomali">Cam Anomali</string>
+    <string name="timeline">Timeline</string>
 </resources>

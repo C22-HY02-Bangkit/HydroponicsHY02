@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.capstone.hidroponichy02">
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -15,29 +21,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HydroponicsHY02">
         <activity
+            android:name=".activity.TimelineActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SplashActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false"
-            android:theme="@style/AuthTheme"/>
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false"
-            android:theme="@style/AuthTheme"/>
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity
             android:name=".activity.MlActivity"
             android:exported="false"
-            android:theme="@style/AuthTheme"/>
+            android:theme="@style/AuthTheme" />
     </application>
 
 </manifest>
