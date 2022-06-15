@@ -4,4 +4,7 @@
         <attr name="email" format="boolean" />
         <attr name="password" format="boolean" />
     </declare-styleable>
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

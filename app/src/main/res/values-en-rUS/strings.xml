@@ -61,4 +61,9 @@
     <string name="dashboard">Dashboard</string>
     <string name="cam_anomali">Cam Anomali</string>
     <string name="timeline">Timeline</string>
+    <string name="control">control</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_text_1">Data</string>
+    <string name="tab_text_2">Graph</string>
+    <string name="controler">Controller</string>
 </resources>

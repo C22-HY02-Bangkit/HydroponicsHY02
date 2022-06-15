@@ -63,26 +63,10 @@ class MlActivity : AppCompatActivity() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
-        binding.take.setOnClickListener { startTakePhoto() }
-        val navView: BottomNavigationView = binding.bottom
-        navView.setSelectedItemId(R.id.cam)
-        navView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.cam ->
-                    return@OnNavigationItemSelectedListener true
-                R.id.dashboard -> {
-                    startActivity(Intent(applicationContext, MainActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.timeline -> {
-                    startActivity(Intent(applicationContext, TimelineActivity::class.java))
-                    overridePendingTransition(0, 0)
-                    return@OnNavigationItemSelectedListener true
-                }
-            }
-            false
-        })
+        binding.back.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
 
     }
     private fun startTakePhoto() {

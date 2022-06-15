@@ -7,9 +7,9 @@
     android:icon="@drawable/ic_chart"
     />
     <item
-        android:id="@+id/cam"
-        android:title="@string/cam_anomali"
-        android:icon="@drawable/ic_camera"/>
+        android:id="@+id/control"
+        android:title="@string/control"
+        android:icon="@drawable/ic_control"/>
     <item
         android:id="@+id/timeline"
         android:title="@string/timeline"

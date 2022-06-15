@@ -4,33 +4,46 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/bg_border.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/ic_back.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/ic_camera.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/ic_logout.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable-v24/ic_settings_white.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_border.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_border_bold.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_brown_circle.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_button.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_button_disable.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_green_circle.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_green_tab.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_grey_tab.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_orange_circle.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/bg_tabs_selector.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_back.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_camera.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_chart.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_close.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_control.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_key.xml" value="0.16" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_min.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/ic_person.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/logo_email.xml" value="0.1375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/drawable/selector.xml" value="0.1375" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_control.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_graph.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_ml.xml" value="0.18" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_nav.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_profil.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_splash.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/activity_timeline.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/content_login.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/fragment_dashboard.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/fragment_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/fragment_graph.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/fragment_notifications.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/HydroponicsHY02/app/src/main/res/layout/item_list_story.xml" value="0.17074275362318841" />
@@ -52,5 +65,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
