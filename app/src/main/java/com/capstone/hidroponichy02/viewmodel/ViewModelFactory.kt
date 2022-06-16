@@ -5,11 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.hidroponichy02.data.Injection
 import com.capstone.hidroponichy02.model.UserPreference
-import com.capstone.hidroponichy02.repository.StoryRepository
+import com.capstone.hidroponichy02.repository.UserRepository
 
 
 class ViewModelFactory private constructor(
-    private val storyRepository: StoryRepository,
+    private val userRepository: UserRepository
 ) :
     ViewModelProvider.NewInstanceFactory() {
 
@@ -17,10 +17,13 @@ class ViewModelFactory private constructor(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-                LoginViewModel(storyRepository) as T
+                LoginViewModel(userRepository) as T
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel(storyRepository) as T
+                RegisterViewModel(userRepository) as T
+            }
+            modelClass.isAssignableFrom(DeviceViewModel::class.java) -> {
+                DeviceViewModel(userRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
@@ -38,6 +41,7 @@ class ViewModelFactory private constructor(
 
 class ViewModelUserFactory(private val pref: UserPreference) :
     ViewModelProvider.NewInstanceFactory() {
+
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

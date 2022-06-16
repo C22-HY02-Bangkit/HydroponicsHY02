@@ -24,6 +24,8 @@ import com.capstone.hidroponichy02.viewmodel.ViewModelFactory
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("settings")
 
+private lateinit var user: UserModel
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -123,7 +125,11 @@ class LoginActivity : AppCompatActivity() {
                     is ResultResponse.Success -> {
                         binding.progressBar.visibility = View.GONE
                         val user = UserModel(
+                            it.data.token,
+                            it.data.verifyUser,
+                            it.data.userId,
                             email,
+                            it.data.fullname,
                             pass,
                             true
                         )
@@ -133,6 +139,8 @@ class LoginActivity : AppCompatActivity() {
                         lifecycleScope.launchWhenStarted {
                             userPref.saveUser(user)
                         }
+
+
                     }
                     is ResultResponse.Error -> {
                         binding.progressBar.visibility = View.GONE

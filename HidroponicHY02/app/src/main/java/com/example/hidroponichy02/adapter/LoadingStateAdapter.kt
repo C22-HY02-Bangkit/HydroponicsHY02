@@ -1,4 +1,4 @@
-package com.capstone.hidroponichy02.adapter
+package com.example.hidroponichy02.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.capstone.hidroponichy02.databinding.ItemLoadingBinding
+import com.example.hidroponichy02.databinding.ItemLoadingBinding
 
 class LoadingStateAdapter(private val retry: () -> Unit) :
     LoadStateAdapter<LoadingStateAdapter.LoadingStateViewHolder>() {

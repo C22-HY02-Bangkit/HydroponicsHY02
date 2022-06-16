@@ -1,11 +1,11 @@
 package com.capstone.hidroponichy02.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.capstone.hidroponichy02.repository.StoryRepository
+import com.capstone.hidroponichy02.repository.UserRepository
 
-class LoginViewModel(private val storyRepository: StoryRepository) : ViewModel() {
+class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     fun login(email: String, pass: String) =
-        storyRepository.login(email, pass)
+        userRepository.login(email, pass)
 
 }

@@ -1,12 +1,12 @@
 package com.capstone.hidroponichy02.data
 
 import android.content.Context
-import com.capstone.hidroponichy02.repository.StoryRepository
+import com.capstone.hidroponichy02.repository.UserRepository
 import com.capstone.hidroponichy02.service.ApiConfig
 
 object Injection {
-    fun provideRepository(context: Context): StoryRepository {
+    fun provideRepository(context: Context): UserRepository {
         val apiService = ApiConfig.getApiService()
-        return StoryRepository(apiService)
+        return UserRepository(apiService)
     }
 }

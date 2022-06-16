@@ -1,17 +1,16 @@
 package com.capstone.hidroponichy02.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.hidroponichy02.R
 import com.capstone.hidroponichy02.databinding.ActivityControlBinding
-import com.capstone.hidroponichy02.databinding.ActivityTimelineBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ControlActivity : AppCompatActivity() {
     private lateinit var binding: ActivityControlBinding
-    var ph=0
+    var ph = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityControlBinding.inflate(layoutInflater)
@@ -36,11 +35,11 @@ class ControlActivity : AppCompatActivity() {
             }
             false
         })
-        binding.cam.setOnClickListener{
+        binding.cam.setOnClickListener {
             startActivity(Intent(this@ControlActivity, MlActivity::class.java))
             true
         }
-        binding.setting.setOnClickListener{
+        binding.setting.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             true
         }

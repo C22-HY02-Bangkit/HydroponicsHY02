@@ -1,12 +1,12 @@
-package com.capstone.hidroponichy02.repository
+package com.example.hidroponichy02.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
-import com.capstone.hidroponichy02.response.LoginResult
-import com.capstone.hidroponichy02.response.ResultResponse
-import com.capstone.hidroponichy02.response.UserResponse
-import com.capstone.hidroponichy02.service.ApiService
+import com.example.hidroponichy02.response.LoginResult
+import com.example.hidroponichy02.response.ResultResponse
+import com.example.hidroponichy02.response.UserResponse
+import com.example.hidroponichy02.service.ApiService
 
 class StoryRepository(
     private val apiService: ApiService,

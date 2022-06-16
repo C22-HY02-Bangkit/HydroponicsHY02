@@ -40,11 +40,11 @@ class SplashActivity : AppCompatActivity() {
 
     private fun loadAnimation() {
         Handler(Looper.getMainLooper()).postDelayed({
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this,
-                    splashActivityBinding.imageSplashScreen,
-                    "logoLogin"
-                )
+            ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this,
+                splashActivityBinding.imageSplashScreen,
+                "logoLogin"
+            )
             startIntent()
             mShouldFinish = true
         }, SPLASH_DELAY)

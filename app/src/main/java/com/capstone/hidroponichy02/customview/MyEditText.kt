@@ -38,6 +38,7 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
     ) {
         init(style, defStyleAttr)
     }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         setBackgroundResource(R.drawable.bg_border)
@@ -90,6 +91,7 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
 
         a.recycle()
     }
+
     private fun setButtonDrawables(
         startOfTheText: Drawable? = null,
         topOfTheText: Drawable? = null,
@@ -125,7 +127,6 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
             else -> setButtonDrawables()
         }
     }
-
 
 
     override fun onTouch(v: View?, event: MotionEvent): Boolean {
@@ -168,6 +169,7 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
         return false
     }
 }
+
 fun String.isValidEmail(): Boolean {
     val pattern: Pattern = Patterns.EMAIL_ADDRESS
     return pattern.matcher(this).matches()

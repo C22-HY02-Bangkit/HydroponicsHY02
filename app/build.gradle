@@ -22,7 +22,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", '"https://floating-falls-99674.herokuapp.com/api/users/"')
+        buildConfigField("String", "BASE_URL", '"https://floating-falls-99674.herokuapp.com/api/"')
 
     }
 
