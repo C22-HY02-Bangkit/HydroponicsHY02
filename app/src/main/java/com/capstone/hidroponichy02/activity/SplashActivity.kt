@@ -70,7 +70,7 @@ class SplashActivity : AppCompatActivity() {
     private fun goMain(boolean: Boolean) {
         if (boolean) {
             startActivity(
-                Intent(this, MainActivity::class.java),
+                Intent(this, WelcomeActivity::class.java),
                 ActivityOptionsCompat.makeSceneTransitionAnimation(this as Activity).toBundle()
             )
             finish()

@@ -22,7 +22,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", '"https://floating-falls-99674.herokuapp.com/api/users/"')
+        buildConfigField("String", "BASE_URL", '"https://floating-falls-99674.herokuapp.com/api/"')
 
     }
 
@@ -43,6 +43,9 @@ android {
 }
 
 dependencies {
+    implementation('io.socket:socket.io-client:2.0.0'){
+        exclude group: 'org.json', module:'json'
+    }
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
     implementation 'androidx.core:core-ktx:1.7.0'

@@ -72,13 +72,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_image"
                 >
 
-                <EditText
+                <TextView
                     android:id="@+id/et_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:gravity="center"
-                    android:hint="Fullname"
+                    android:text="Fullname"
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
@@ -98,11 +98,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_first_name"
                 >
 
-                <EditText
+                <TextView
                     android:id="@+id/et_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="email"
+                    android:text="email"
                     android:gravity="center"
                     android:padding="10dp"
                     android:textColor="#000000"
@@ -125,11 +125,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_last_name"
                 >
 
-                <EditText
+                <TextView
                     android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Study Program"
+                    android:text="Study Program"
                     android:gravity="center"
                     android:padding="10dp"
                     android:textColor="#000000"
@@ -153,11 +153,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_email"
                 >
 
-                <EditText
+                <TextView
                     android:id="@+id/et_contact_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Campus"
+                    android:text="Campus"
                     android:gravity="center"
                     android:padding="10dp"
                     android:textColor="#000000"
@@ -167,67 +167,6 @@
                     android:inputType="phone"
                     />
             </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_des"
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.7"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="14dp"
-                android:textColorHint="#808080"
-                app:layout_constraintTop_toBottomOf="@+id/layout_contact_no"
-                >
-
-                <EditText
-                    android:id="@+id/et_des"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Address"
-                    android:gravity="center"
-                    android:padding="30dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#808080"
-                    android:background="#00000000"
-                    android:textSize="15sp"
-                    android:inputType="text"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/bt_register"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/green_200"
-                android:elevation="2dp"
-                android:text="Update Profile"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_des"
-                app:layout_constraintWidth_percent="0.7" />
-
-            <Button
-                android:id="@+id/bt_logout"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/red_500"
-                android:elevation="2dp"
-                android:text="@string/logout"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_register"
-                app:layout_constraintWidth_percent="0.7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

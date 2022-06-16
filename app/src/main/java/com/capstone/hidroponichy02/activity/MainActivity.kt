@@ -8,25 +8,34 @@ import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.capstone.hidroponichy02.R
+import com.capstone.hidroponichy02.adapter.DeviceAdapter
+import com.capstone.hidroponichy02.adapter.LoadingStateAdapter
 import com.capstone.hidroponichy02.adapter.SectionPagerAdapter
 import com.capstone.hidroponichy02.databinding.ActivityMainBinding
 import com.capstone.hidroponichy02.model.UserModel
 import com.capstone.hidroponichy02.model.UserPreference
+import com.capstone.hidroponichy02.viewmodel.DeviceViewModel
 import com.capstone.hidroponichy02.viewmodel.MainViewModel
+import com.capstone.hidroponichy02.viewmodel.ViewModelFactory
 import com.capstone.hidroponichy02.viewmodel.ViewModelUserFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 
@@ -34,15 +43,23 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("s
 
 class MainActivity : AppCompatActivity() {
     private lateinit var user: UserModel
+    private lateinit var adapter: DeviceAdapter
     private lateinit var mainViewModel: MainViewModel
-    private lateinit var binding: ActivityMainBinding
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding
+
+    private val viewModel: DeviceViewModel by viewModels {
+        ViewModelFactory.getInstance(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        val navView: BottomNavigationView = binding.bottom
-        val mBundle = Bundle()
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
+
+        supportActionBar?.hide()
+        user = intent.getParcelableExtra(EXTRA_USER)!!
+        val navView: BottomNavigationView = binding!!.bottom
 
         with(navView) {
 
@@ -63,54 +80,80 @@ class MainActivity : AppCompatActivity() {
                 }
                 false
             })
-            binding.faddstory.setOnClickListener{
-                startActivity(Intent(this@MainActivity, ProfilActivity::class.java))
-                true
-            }
-            binding.cam.setOnClickListener{
-                startActivity(Intent(this@MainActivity, MlActivity::class.java))
-                true
-            }
-            binding.setting.setOnClickListener{
+
+            binding!!.setting.setOnClickListener {
                 startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
                 true
             }
         }
 
-        val sectionPagerAdapter = SectionPagerAdapter(this, mBundle)
-        val viewPager: ViewPager2 = binding.viewPager
-        viewPager.adapter = sectionPagerAdapter
-        val tabLayout: TabLayout = binding.tabLayout
-
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
-        }.attach()
-
-
-        supportActionBar?.hide()
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        menu.findItem(R.id.add).isVisible = false
-        menu.findItem(R.id.maps).isVisible = false
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.setting -> {
-                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
-            }
+        adapter()
+        swipeToRefresh()
+        binding!!.faddstory.setOnClickListener{
+            startActivity(Intent(this@MainActivity, ProfilActivity::class.java))
+            true
         }
-        return super.onOptionsItemSelected(item)
+        binding!!.cam.setOnClickListener{
+            startActivity(Intent(this@MainActivity, MlActivity::class.java))
+            true
+        }
+        binding!!.setting.setOnClickListener{
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            true
+        }
     }
 
-    companion object {
-        private val TAB_TITLES = intArrayOf(
-            R.string.tab_text_1,
-            R.string.tab_text_2
+    private fun adapter() {
+
+        adapter = DeviceAdapter()
+        binding?.rvStory?.adapter = adapter.withLoadStateFooter(
+            footer = LoadingStateAdapter {
+                adapter.retry()
+            }
         )
+        binding?.rvStory?.layoutManager = LinearLayoutManager(this@MainActivity)
+        binding?.rvStory?.setHasFixedSize(true)
+        lifecycleScope.launchWhenStarted {
+            adapter.loadStateFlow.collect {
+                 binding?.swipeRefresh?.isRefreshing = it.mediator?.refresh is LoadState.Loading
+                 if (adapter.itemCount < 1) binding?.viewError?.root?.visibility = View.VISIBLE
+                 else binding?.viewError?.root?.visibility = View.GONE
+                 }
+                }
+                lifecycleScope.launch {
+                    adapter.loadStateFlow.collectLatest { loadStates ->
+                        binding?.viewError?.root?.isVisible = loadStates.refresh is LoadState.Error
+                    }
+                    if (adapter.itemCount < 1) binding?.viewError?.root?.visibility = View.VISIBLE
+                    else binding?.viewError?.root?.visibility = View.GONE
+                }
+                viewModel.getUserDevice(user.token).observe(this) {
+                    adapter.submitData(lifecycle, it)
+                }
+            }
+
+            private fun swipeToRefresh() {
+                binding?.swipeRefresh?.setOnRefreshListener { adapter.refresh() }
+            }
+
+            override fun onResume() {
+                super.onResume()
+                adapter()
+            }
+
+            override fun onDestroy() {
+                super.onDestroy()
+                _binding = null
+            }
+
+            companion object {
+            const val EXTRA_USER = "user"
+            }
+
+    private fun setViewModel() {
+        mainViewModel = ViewModelProvider(
+            this,
+            ViewModelUserFactory(UserPreference.getInstance(dataStore))
+        )[MainViewModel::class.java]
     }
-}
+        }

@@ -67,6 +67,9 @@ class MlActivity : AppCompatActivity() {
             onBackPressed()
             finish()
         }
+        binding.take.setOnClickListener{
+            startTakePhoto()
+        }
 
     }
     private fun startTakePhoto() {

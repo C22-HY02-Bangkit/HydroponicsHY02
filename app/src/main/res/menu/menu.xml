@@ -7,7 +7,7 @@
     android:icon="@drawable/ic_chart"
     />
     <item
-        android:id="@+id/control"
+        android:id="@+id/cam"
         android:title="@string/control"
         android:icon="@drawable/ic_control"/>
     <item
