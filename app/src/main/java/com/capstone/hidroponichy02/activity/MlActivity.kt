@@ -1,41 +1,40 @@
-
 package com.capstone.hidroponichy02.activity
 
 import android.Manifest
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.content.pm.PackageManager
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import android.media.ThumbnailUtils
+import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.capstone.hidroponichy02.R
 import com.capstone.hidroponichy02.databinding.ActivityMlBinding
 import com.capstone.hidroponichy02.ml.Model
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 class MlActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMlBinding
+    private lateinit var binding: ActivityMlBinding
     var imageSize = 150
+
     companion object {
 
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
         grantResults: IntArray
-    )
-    {
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (!allPermissionsGranted()) {
@@ -52,6 +51,7 @@ class MlActivity : AppCompatActivity() {
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMlBinding.inflate(layoutInflater)
@@ -72,9 +72,10 @@ class MlActivity : AppCompatActivity() {
         }
 
     }
+
     private fun startTakePhoto() {
         val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(camera,1)
+        startActivityForResult(camera, 1)
     }
 
     private fun classifyImage(image: Bitmap?) {
@@ -116,13 +117,15 @@ class MlActivity : AppCompatActivity() {
                     maxPos = i
                 }
             }
-            val classes = arrayOf(getString(R.string.ml_Bacterial),
+            val classes = arrayOf(
+                getString(R.string.ml_Bacterial),
                 getString(R.string.ml_Downy),
                 getString(R.string.ml_Septoria),
                 getString(R.string.ml_Wilt),
                 getString(R.string.ml_powdery),
                 getString(R.string.ml_Viral),
-                getString(R.string.ml_healthy))
+                getString(R.string.ml_healthy)
+            )
             binding.result.text = classes[maxPos]
             var s = ""
             for (i in classes.indices) {

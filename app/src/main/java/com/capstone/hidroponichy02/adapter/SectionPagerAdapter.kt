@@ -7,7 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.capstone.hidroponichy02.fragment.DataFragment
 import com.capstone.hidroponichy02.fragment.GraphFragment
 
-class SectionPagerAdapter(activity: AppCompatActivity, data: Bundle): FragmentStateAdapter(activity) {
+class SectionPagerAdapter(activity: AppCompatActivity, data: Bundle) :
+    FragmentStateAdapter(activity) {
 
     private var fBundle: Bundle = data
 
@@ -16,7 +17,7 @@ class SectionPagerAdapter(activity: AppCompatActivity, data: Bundle): FragmentSt
 
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
-        when (position){
+        when (position) {
             0 -> fragment = DataFragment()
             1 -> fragment = GraphFragment()
         }
