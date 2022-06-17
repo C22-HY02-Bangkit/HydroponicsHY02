@@ -24,10 +24,13 @@ data class DataItem(
     val product: Product,
 
     @field:SerializedName("planted")
-    val planted: String,
+    val planted: Planted,
 
     @field:SerializedName("description")
     val description: String,
+
+    @field:SerializedName("status")
+    val statuss: Int,
 
     @PrimaryKey
     @field:SerializedName("id")
@@ -41,4 +44,12 @@ data class Product(
 
     @field:SerializedName("title")
     val title: String
+)
+data class Planted(
+
+    @field:SerializedName("id")
+    val id: String,
+
+    @field:SerializedName("name")
+    val name: String
 )

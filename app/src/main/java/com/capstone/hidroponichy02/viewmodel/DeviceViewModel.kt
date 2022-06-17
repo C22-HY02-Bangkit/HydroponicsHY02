@@ -16,5 +16,7 @@ class DeviceViewModel(
     fun getUserDevice(token: String): LiveData<PagingData<DataItem>> {
         return userRepository.getUserDevice(token).cachedIn(viewModelScope).asLiveData()
     }
+    fun update(admin_id: String,status: Int)=
+        userRepository.update(admin_id, status)
 
 }

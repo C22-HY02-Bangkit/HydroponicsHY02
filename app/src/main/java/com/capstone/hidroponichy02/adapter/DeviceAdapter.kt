@@ -11,11 +11,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.hidroponichy02.activity.DetailActivity
 import com.capstone.hidroponichy02.databinding.ItemListDeviceBinding
+import com.capstone.hidroponichy02.model.UserModel
 import com.capstone.hidroponichy02.response.DataItem
 
 class DeviceAdapter :
     PagingDataAdapter<DataItem, DeviceAdapter.ViewHolder>(DIFF_CALLBACK) {
-
+    private lateinit var user: UserModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -39,13 +40,18 @@ class DeviceAdapter :
         fun bind(device: DataItem) {
             with(binding) {
                 tvProduct.text = device.product.title
-                tvPlant.text = device.planted
+                tvPlant.text = device.planted.name
                 tvDescPlant.text = device.description
 
                 tvProduct.setOnClickListener {
                     val intent = Intent(it.context, DetailActivity::class.java)
                     intent.putExtra(DetailActivity.EXTRA_ID, device.id)
                     intent.putExtra(DetailActivity.EXTRA_NAME, device.product.title)
+                    intent.putExtra(DetailActivity.EXTRA_PLANT, device.planted.name)
+                    intent.putExtra(DetailActivity.EXTRA_STATUS, device.statuss)
+                    //intent.putExtra(DetailActivity.EXTRA_TOKEN, user.token)
+
+
                     it.context.startActivity(intent)
                 }
             }

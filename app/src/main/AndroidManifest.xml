@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HydroponicsHY02">
         <activity
+            android:name=".MlTomatActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.WelcomeActivity"
             android:exported="false"
             android:theme="@style/AuthTheme" />
@@ -34,8 +37,7 @@
         <activity
             android:name=".activity.DetailActivity"
             android:exported="false"
-            android:theme="@style/AuthTheme" >
-    </activity>
+            android:theme="@style/AuthTheme"></activity>
         <activity
             android:name=".activity.ProfilActivity"
             android:exported="false"
@@ -46,13 +48,13 @@
             android:theme="@style/AuthTheme" />
         <activity
             android:name=".activity.SplashActivity"
-            android:exported="true"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false"

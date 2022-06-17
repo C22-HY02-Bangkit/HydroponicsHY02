@@ -7,10 +7,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.capstone.hidroponichy02.data.DevicePagingSource
-import com.capstone.hidroponichy02.response.DataItem
-import com.capstone.hidroponichy02.response.ResultResponse
-import com.capstone.hidroponichy02.response.UserResponse
-import com.capstone.hidroponichy02.response.data
+import com.capstone.hidroponichy02.response.*
 import com.capstone.hidroponichy02.service.ApiService
 import kotlinx.coroutines.flow.Flow
 
@@ -65,6 +62,23 @@ class UserRepository(
             }
         ).flow
     }
+    fun update(
+        admin_id: String,
+        status: Int
+    ): LiveData<ResultResponse<DeviceResponse>> =
+        liveData {
+            emit(ResultResponse.Loading)
+            try {
+                val response = apiService.updatedevice(admin_id, status)
+                if (response.code == 200) {
+                    emit(ResultResponse.Success(response))
+                } else {
+                    Log.e(TAG, "Register Fail")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Register Exception: ${e.message.toString()} ")
+            }
+        }
 
 
     companion object {

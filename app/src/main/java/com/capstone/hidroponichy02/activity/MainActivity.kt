@@ -44,7 +44,6 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("s
 class MainActivity : AppCompatActivity() {
     private lateinit var user: UserModel
     private lateinit var adapter: DeviceAdapter
-    private lateinit var mainViewModel: MainViewModel
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
 
@@ -148,12 +147,5 @@ class MainActivity : AppCompatActivity() {
 
             companion object {
             const val EXTRA_USER = "user"
-            }
-
-    private fun setViewModel() {
-        mainViewModel = ViewModelProvider(
-            this,
-            ViewModelUserFactory(UserPreference.getInstance(dataStore))
-        )[MainViewModel::class.java]
-    }
+        }
         }
